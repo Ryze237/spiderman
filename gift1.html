@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Something For You</title>
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================================
+           BODY
+        ========================================= */
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                "Georgia",
+                "Times New Roman",
+                serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(255,255,255,.95),
+                    rgba(255,235,240,.75) 38%,
+                    #ffdce5 100%
+                );
+
+            color: #713b4b;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .gift-page {
+
+            min-height: 100vh;
+
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            padding: 30px;
+        }
+
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        .gift-title {
+
+            position: absolute;
+
+            top: 55px;
+
+            text-align: center;
+
+            color: #b94f6d;
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            letter-spacing: -.5px;
+
+            opacity: 0;
+
+            transform: translateY(-15px);
+
+            animation:
+                titleReveal
+                .8s
+                ease
+                forwards;
+        }
+
+
+        .gift-subtitle {
+
+            position: absolute;
+
+            top: 105px;
+
+            text-align: center;
+
+            color: #9b6173;
+
+            font-size: 16px;
+
+            letter-spacing: .5px;
+
+            opacity: 0;
+
+            animation:
+                subtitleReveal
+                .8s
+                ease
+                .35s
+                forwards;
+        }
+
+
+        @keyframes titleReveal {
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes subtitleReveal {
+
+            to {
+
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .bouquet-section {
+
+            width: min(
+                1100px,
+                100%
+            );
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                360px
+                1fr;
+
+            align-items: center;
+
+            gap: 35px;
+        }
+
+
+        /* =========================================
+           MESSAGE COLUMNS
+        ========================================= */
+
+        .messages {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 42px;
+        }
+
+
+        .messages.left {
+
+            align-items: flex-end;
+        }
+
+
+        .messages.right {
+
+            align-items: flex-start;
+        }
+
+
+        /* =========================================
+           MESSAGE
+        ========================================= */
+
+        .message-card {
+
+            position: relative;
+
+            max-width: 245px;
+
+            padding: 15px 21px;
+
+            background:
+                rgba(255,255,255,.62);
+
+            border:
+                1px solid
+                rgba(183,110,121,.18);
+
+            border-radius: 18px;
+
+            color: #81485a;
+
+            font-size: 16px;
+
+            line-height: 1.4;
+
+            box-shadow:
+                0 8px 25px
+                rgba(166,82,105,.08);
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            opacity: 0;
+
+            transform:
+                translateX(25px)
+                scale(.95);
+
+            animation:
+                messageReveal
+                .65s
+                cubic-bezier(.16,1,.3,1)
+                forwards;
+        }
+
+
+        .messages.left .message-card {
+
+            transform:
+                translateX(-25px)
+                scale(.95);
+        }
+
+
+        .message-card:nth-child(1) {
+            animation-delay: .8s;
+        }
+
+        .message-card:nth-child(2) {
+            animation-delay: 1.15s;
+        }
+
+        .message-card:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+
+
+        @keyframes messageReveal {
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================================
+           LITTLE HEART
+        ========================================= */
+
+        .message-card::before {
+
+            content: "♡";
+
+            position: absolute;
+
+            top: 50%;
+
+            color: #d87591;
+
+            font-size: 17px;
+
+            transform:
+                translateY(-50%);
+        }
+
+
+        .messages.left
+        .message-card::before {
+
+            right: -30px;
+        }
+
+
+        .messages.right
+        .message-card::before {
+
+            left: -30px;
+        }
+
+
+        /* =========================================
+           BOUQUET
+        ========================================= */
+
+        .bouquet-container {
+
+            position: relative;
+
+            width: 360px;
+
+            height: 500px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            opacity: 0;
+
+            transform:
+                translateY(25px)
+                scale(.92);
+
+            animation:
+                bouquetReveal
+                1s
+                cubic-bezier(.16,1,.3,1)
+                .35s
+                forwards;
+        }
+
+
+        .bouquet {
+
+            width: 340px;
+
+            max-height: 480px;
+
+            object-fit: contain;
+
+            position: relative;
+
+            z-index: 3;
+
+            filter:
+                drop-shadow(
+                    0 18px 25px
+                    rgba(126,58,77,.18)
+                );
+        }
+
+
+        @keyframes bouquetReveal {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px)
+                    scale(.92);
+            }
+
+            70% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(-5px)
+                    scale(1.02);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================================
+           BOUQUET GLOW
+        ========================================= */
+
+        .bouquet-glow {
+
+            position: absolute;
+
+            width: 270px;
+
+            height: 270px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.9),
+                    rgba(242,175,190,.3),
+                    transparent 70%
+                );
+
+            filter: blur(10px);
+
+            z-index: 1;
+
+            animation:
+                softGlow
+                3s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes softGlow {
+
+            0%,
+            100% {
+
+                transform: scale(.92);
+
+                opacity: .65;
+            }
+
+            50% {
+
+                transform: scale(1.08);
+
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================
+           FLOATING HEARTS
+        ========================================= */
+
+        .floating-heart {
+
+            position: absolute;
+
+            color: #d77a94;
+
+            font-size: 20px;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            animation:
+                floatHeart
+                4s
+                ease-in-out
+                infinite;
+        }
+
+
+        .heart-1 {
+
+            top: 25%;
+
+            left: 15%;
+
+            animation-delay: 1.8s;
+        }
+
+
+        .heart-2 {
+
+            top: 35%;
+
+            right: 14%;
+
+            animation-delay: 2.5s;
+        }
+
+
+        .heart-3 {
+
+            bottom: 22%;
+
+            left: 25%;
+
+            animation-delay: 3.1s;
+        }
+
+
+        .heart-4 {
+
+            bottom: 25%;
+
+            right: 25%;
+
+            animation-delay: 2.1s;
+        }
+
+
+        @keyframes floatHeart {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(15px)
+                    scale(.7);
+            }
+
+            25% {
+
+                opacity: .7;
+            }
+
+            70% {
+
+                opacity: .5;
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-55px)
+                    scale(1.1);
+            }
+        }
+
+
+        /* =========================================
+           BOTTOM BUTTON
+        ========================================= */
+
+        .back-button {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            padding:
+                11px
+                24px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,.7);
+
+            color: #a64e69;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            border:
+                1px solid
+                rgba(183,110,121,.25);
+
+            transition:
+                transform .15s ease,
+                background .15s ease;
+        }
+
+
+        .back-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            background:
+                rgba(255,255,255,.95);
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            body {
+
+                overflow-y: auto;
+
+                overflow-x: hidden;
+            }
+
+
+            .gift-page {
+
+                min-height: 100vh;
+
+                padding:
+                    120px
+                    20px
+                    90px;
+            }
+
+
+            .gift-title {
+
+                top: 35px;
+
+                font-size: 27px;
+            }
+
+
+            .gift-subtitle {
+
+                top: 78px;
+
+                font-size: 14px;
+            }
+
+
+            .bouquet-section {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        280px
+        1fr;
+
+    align-items: center;
+
+    gap: 5px;
+
+    width: 100%;
+}
+
+
+            .bouquet-container {
+
+    order: 1;
+
+    width: 210px;
+
+    height: 330px;
+
+    /* Keep the exact same entrance animation */
+    opacity: 0;
+
+    transform:
+        translateY(25px)
+        scale(.92);
+
+    animation:
+        bouquetReveal
+        1s
+        cubic-bezier(.16,1,.3,1)
+        .35s
+        forwards;
+}
+
+
+            .bouquet {
+
+                width: 205px;
+
+                max-height: 320px;
+            }
+
+
+            .messages {
+
+    width: auto;
+
+    gap: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center !important;
+}
+
+
+            
+
+            .message-card {
+
+    width: 100%;
+
+    max-width: 125px;
+
+    padding: 10px 8px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.25;
+
+    transform:
+        translateY(15px)
+        scale(.96);
+}
+
+
+            .messages.left
+            .message-card {
+
+                transform:
+                    translateY(15px)
+                    scale(.96);
+            }
+
+
+            .message-card::before {
+
+                display: none;
+            }
+
+
+            .back-button {
+
+                bottom: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="gift-page">
+
+
+        <!-- =====================================
+             TITLE
+        ====================================== -->
+
+        <h1 class="gift-title">
+            A little something for you ♡
+        </h1>
+
+
+        <p class="gift-subtitle">
+            Because you deserve to be reminded...
+        </p>
+
+
+        <!-- =====================================
+             DECORATIVE HEARTS
+        ====================================== -->
+
+        <span class="floating-heart heart-1">♡</span>
+
+        <span class="floating-heart heart-2">♡</span>
+
+        <span class="floating-heart heart-3">✦</span>
+
+        <span class="floating-heart heart-4">♡</span>
+
+
+        <!-- =====================================
+             MAIN BOUQUET + MESSAGES
+        ====================================== -->
+
+        <section class="bouquet-section">
+
+
+            <!-- =================================
+                 LEFT MESSAGES
+            ================================== -->
+
+            <div class="messages left">
+
+                <div class="message-card">
+                    I'll never forget you .
+                </div>
+
+                <div class="message-card">
+                    Your smile is my favorite.
+                </div>
+
+                <div class="message-card">
+                    You are truly special to me.
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 BOUQUET
+            ================================== -->
+
+            <div class="bouquet-container">
+
+                <div class="bouquet-glow"></div>
+
+                <img
+                    src="images/Bouquet1.png"
+                    alt="A beautiful bouquet of roses"
+                    class="bouquet"
+                >
+
+            </div>
+
+
+            <!-- =================================
+                 RIGHT MESSAGES
+            ================================== -->
+
+            <div class="messages right">
+
+                <div class="message-card">
+                    You're always on my mind.
+                </div>
+
+                <div class="message-card">
+                    Du bist gut genug.
+                </div>
+
+                <div class="message-card">
+                    You make everything feel brighter.
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             BACK BUTTON
+        ====================================== -->
+
+        <button
+            class="back-button"
+            onclick="window.location.href='surprise.html'"
+        >
+            ← Back to surprises
+        </button>
+
+
+    </main>
+
+
+</body>
+
+</html>

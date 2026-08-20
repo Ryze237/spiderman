@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#ffe9ed">
+
+    <title>How Much Do You Love Me?</title>
+
+    <!-- Cute rounded + handwritten fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Patrick+Hand&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- =====================================
+         BACKGROUND DECORATIONS
+    ====================================== -->
+
+    <!-- Top-right couple -->
+    <div class="couple-decoration">
+        <div class="couple-heart">♥</div>
+
+        <div class="tiny-couple">
+            <span>♡</span>
+            <span>♡</span>
+        </div>
+    </div>
+
+
+    <!-- Paper airplane -->
+    <div class="airplane-decoration">
+
+        <svg
+            class="airplane"
+            viewBox="0 0 120 80"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <path
+                d="M5 18 L105 5 L66 58 L48 38 Z"
+                fill="#ffd0db"
+                stroke="#c98296"
+                stroke-width="2"
+            />
+
+            <path
+                d="M48 38 L105 5 L66 58"
+                fill="none"
+                stroke="#c98296"
+                stroke-width="2"
+            />
+
+            <path
+                d="M48 38 L52 70 L66 58"
+                fill="#f5b9c9"
+                stroke="#c98296"
+                stroke-width="2"
+            />
+
+            <!-- tiny face -->
+            <circle cx="63" cy="28" r="2" fill="#805364"/>
+            <circle cx="70" cy="27" r="2" fill="#805364"/>
+
+            <path
+                d="M64 32 Q67 35 70 32"
+                fill="none"
+                stroke="#805364"
+                stroke-width="1.5"
+                stroke-linecap="round"
+            />
+
+        </svg>
+
+
+        <!-- dotted heart trail -->
+
+        <svg
+            class="heart-trail"
+            viewBox="0 0 170 150"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <path
+                d="M5 15
+                   C25 35 20 65 48 75
+                   C76 85 98 60 119 78
+                   C140 96 124 130 98 126
+                   C76 122 70 95 88 82"
+                fill="none"
+                stroke="#c88b9b"
+                stroke-width="2"
+                stroke-dasharray="5 6"
+                stroke-linecap="round"
+            />
+
+            <path
+                d="M61 77
+                   C49 61 24 68 24 87
+                   C24 103 43 111 61 124
+                   C79 111 98 103 98 87
+                   C98 68 73 61 61 77Z"
+                fill="none"
+                stroke="#c88b9b"
+                stroke-width="2"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="love-container">
+
+        <!-- CAT -->
+        <div class="cat-area">
+
+            <svg
+                id="cat"
+                class="cat"
+                viewBox="0 0 260 180"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <!-- ears -->
+
+                <path
+                    class="cat-line"
+                    d="M78 63
+                       Q67 39 71 21
+                       Q90 25 104 48"
+                />
+
+                <path
+                    class="cat-line"
+                    d="M182 63
+                       Q193 39 189 21
+                       Q170 25 156 48"
+                />
+
+
+                <!-- head -->
+
+                <path
+                    class="cat-face"
+                    d="
+                    M73 68
+                    Q75 45 104 42
+                    Q130 37 156 42
+                    Q185 45 187 68
+
+                    L185 113
+
+                    Q181 142 154 151
+                    Q130 159 106 151
+                    Q79 142 75 113
+
+                    Z
+                    "
+                />
+
+
+                <!-- left eye -->
+
+                <g id="leftEye">
+
+                    <path
+                        class="eye-line"
+                        d="M91 82
+                           Q101 77 110 83"
+                    />
+
+                    <circle
+                        class="eye-dot"
+                        cx="101"
+                        cy="86"
+                        r="3"
+                    />
+
+                </g>
+
+
+                <!-- right eye -->
+
+                <g id="rightEye">
+
+                    <path
+                        class="eye-line"
+                        d="M150 83
+                           Q159 77 169 82"
+                    />
+
+                    <circle
+                        class="eye-dot"
+                        cx="159"
+                        cy="86"
+                        r="3"
+                    />
+
+                </g>
+
+
+                <!-- nose -->
+
+                <path
+                    class="cat-line"
+                    d="M126 100
+                       Q130 97 134 100
+                       Q130 105 126 100Z"
+                />
+
+
+                <!-- mouth -->
+
+                <path
+                    id="catMouth"
+                    class="cat-line"
+                    d="M130 104
+                       Q130 112 122 113
+
+                       M130 104
+                       Q130 112 138 113"
+                />
+
+
+                <!-- cheeks -->
+
+                <path
+                    class="cheek"
+                    d="M82 108 L95 105"
+                />
+
+                <path
+                    class="cheek"
+                    d="M80 114 L94 111"
+                />
+
+                <path
+                    class="cheek"
+                    d="M165 105 L178 108"
+                />
+
+                <path
+                    class="cheek"
+                    d="M166 111 L180 114"
+                />
+
+
+                <!-- whiskers -->
+
+                <path
+                    class="whisker"
+                    d="M81 103 L53 96"
+                />
+
+                <path
+                    class="whisker"
+                    d="M81 110 L49 110"
+                />
+
+                <path
+                    class="whisker"
+                    d="M179 103 L207 96"
+                />
+
+                <path
+                    class="whisker"
+                    d="M179 110 L211 110"
+                />
+
+
+                <!-- body/paws -->
+
+                <path
+                    class="cat-line"
+                    d="M104 151
+                       Q94 159 101 166
+                       Q108 170 115 161"
+                />
+
+                <path
+                    class="cat-line"
+                    d="M156 151
+                       Q166 159 159 166
+                       Q152 170 145 161"
+                />
+
+
+                <!-- little excitement lines -->
+
+                <g id="happyLines" opacity="0">
+
+                    <path
+                        class="cat-line"
+                        d="M63 53 L53 44"
+                    />
+
+                    <path
+                        class="cat-line"
+                        d="M197 53 L207 44"
+                    />
+
+                    <path
+                        class="cat-line"
+                        d="M72 31 L66 18"
+                    />
+
+                    <path
+                        class="cat-line"
+                        d="M188 31 L194 18"
+                    />
+
+                </g>
+
+            </svg>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="message"
+            class="message"
+        >
+            How much do you love me?
+        </div>
+
+
+        <!-- PERCENTAGE -->
+
+        <div class="percentage">
+
+            <span id="percentage">0</span><span>%</span>
+
+        </div>
+
+
+        <!-- =====================================
+             LOVE GAUGE
+        ====================================== -->
+
+        <div class="gauge-container">
+
+            <svg
+                class="gauge"
+                viewBox="0 0 340 190"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <!-- gauge background -->
+
+                <path
+                    class="gauge-track"
+                    d="
+                    M45 150
+                    A125 125 0 0 1 295 150
+                    "
+                />
+
+
+                <!-- gauge colored segments -->
+
+                <path
+                    class="gauge-segment segment-1"
+                    d="
+                    M45 150
+                    A125 125 0 0 1 82 62
+                    "
+                />
+
+                <path
+                    class="gauge-segment segment-2"
+                    d="
+                    M82 62
+                    A125 125 0 0 1 128 30
+                    "
+                />
+
+                <path
+                    class="gauge-segment segment-3"
+                    d="
+                    M128 30
+                    A125 125 0 0 1 170 25
+                    "
+                />
+
+                <path
+                    class="gauge-segment segment-4"
+                    d="
+                    M170 25
+                    A125 125 0 0 1 212 30
+                    "
+                />
+
+                <path
+                    class="gauge-segment segment-5"
+                    d="
+                    M212 30
+                    A125 125 0 0 1 258 62
+                    "
+                />
+
+                <path
+                    class="gauge-segment segment-6"
+                    d="
+                    M258 62
+                    A125 125 0 0 1 295 150
+                    "
+                />
+
+
+                <!-- inner white area -->
+
+                <path
+                    class="gauge-inner"
+                    d="
+                    M83 150
+                    A87 87 0 0 1 257 150
+                    Z
+                    "
+                />
+
+
+                <!-- little hearts -->
+
+                <text
+                    class="gauge-heart left-heart"
+                    x="58"
+                    y="129"
+                >
+                    ♡
+                </text>
+
+                <text
+                    class="gauge-heart right-heart"
+                    x="268"
+                    y="129"
+                >
+                    ♡
+                </text>
+
+
+                <!-- handwritten love -->
+
+                <text
+                    class="love-word"
+                    x="170"
+                    y="128"
+                >
+                    love
+                </text>
+
+
+                <!-- NEEDLE -->
+
+                <g
+                    id="needle"
+                    class="needle"
+                >
+
+                    <line
+                        x1="170"
+                        y1="150"
+                        x2="170"
+                        y2="55"
+                    />
+
+                    <circle
+                        cx="170"
+                        cy="150"
+                        r="5"
+                    />
+
+                </g>
+
+            </svg>
+
+        </div>
+
+
+        <!-- =====================================
+             SLIDER
+        ====================================== -->
+
+        <div class="slider-wrapper">
+
+            <div
+                id="slider"
+                class="slider"
+                role="slider"
+                tabindex="0"
+                aria-label="Love percentage"
+                aria-valuemin="0"
+                aria-valuemax="500"
+                aria-valuenow="0"
+            >
+
+                <div class="slider-line"></div>
+
+                <div
+                    id="sliderProgress"
+                    class="slider-progress"
+                ></div>
+
+                <div
+                    id="sliderHandle"
+                    class="slider-handle"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- instruction -->
+
+        <div
+            id="instruction"
+            class="instruction"
+        >
+            Drag the little heart →
+        </div>
+
+
+        <!-- =====================================
+             NEXT
+        ====================================== -->
+
+        <button
+            id="nextButton"
+            class="next-button"
+        >
+            NEXT →
+        </button>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

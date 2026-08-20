@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Letter ♡</title>
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255,255,255,.75),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(255,255,255,.5),
+                    transparent 30%
+                ),
+                #ffdfe7;
+
+            overflow: hidden;
+
+            color: #713b4b;
+
+        }
+
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .gift3-page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            position: relative;
+
+            padding: 70px 7vw;
+
+        }
+
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        .page-title {
+
+            text-align: center;
+
+            font-size:
+                clamp(
+                    30px,
+                    5vw,
+                    48px
+                );
+
+            font-weight: 900;
+
+            color: #c65373;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .page-subtitle {
+
+            text-align: center;
+
+            color: #a15c70;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .content {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 70px;
+
+            max-width: 1050px;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =========================================
+           CAT AREA
+        ========================================= */
+
+        .cat-area {
+
+            width: 400px;
+
+            min-width: 400px;
+
+            height: 390px;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .cat-wrapper {
+
+            position: relative;
+
+            width: 260px;
+
+            height: 320px;
+
+            animation:
+                catFloat
+                3.5s
+                ease-in-out
+                infinite;
+
+        }
+
+
+        @keyframes catFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateX(-22px)
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateX(22px)
+                    translateY(-5px);
+
+            }
+
+        }
+
+
+        /* =========================================
+           CAT BODY
+        ========================================= */
+
+        .cat-body {
+
+            position: absolute;
+
+            left: 65px;
+
+            bottom: 10px;
+
+            width: 135px;
+
+            height: 150px;
+
+            background:
+                #fff;
+
+            border-radius:
+                65px
+                65px
+                50px
+                50px;
+
+            box-shadow:
+                0 15px 30px
+                rgba(125,55,76,.12);
+
+        }
+
+
+        /* =========================================
+           CAT HEAD
+        ========================================= */
+
+        .cat-head {
+
+            position: absolute;
+
+            left: 52px;
+
+            top: 25px;
+
+            width: 160px;
+
+            height: 145px;
+
+            background: #fff;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 12px 25px
+                rgba(125,55,76,.12);
+
+            z-index: 3;
+
+        }
+
+
+        /* =========================================
+           EARS
+        ========================================= */
+
+        .ear {
+
+            position: absolute;
+
+            top: -25px;
+
+            width: 65px;
+
+            height: 70px;
+
+            background: #fff;
+
+            clip-path:
+                polygon(
+                    50% 0,
+                    100% 100%,
+                    0 100%
+                );
+
+        }
+
+
+        .ear::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 18px;
+
+            top: 16px;
+
+            width: 30px;
+
+            height: 38px;
+
+            background: #f3a6b7;
+
+            clip-path:
+                polygon(
+                    50% 0,
+                    100% 100%,
+                    0 100%
+                );
+
+        }
+
+
+        .ear.left {
+
+            left: 5px;
+
+            transform:
+                rotate(-18deg);
+
+        }
+
+
+        .ear.right {
+
+            right: 5px;
+
+            transform:
+                rotate(18deg);
+
+        }
+
+
+        /* =========================================
+           FACE
+        ========================================= */
+
+        .eye {
+
+            position: absolute;
+
+            top: 58px;
+
+            width: 13px;
+
+            height: 17px;
+
+            background: #713b4b;
+
+            border-radius: 50%;
+
+        }
+
+
+        .eye.left {
+
+            left: 48px;
+
+        }
+
+
+        .eye.right {
+
+            right: 48px;
+
+        }
+
+
+        .eye::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 3px;
+
+            left: 3px;
+
+            width: 4px;
+
+            height: 5px;
+
+            background: white;
+
+            border-radius: 50%;
+
+        }
+
+
+        .nose {
+
+            position: absolute;
+
+            top: 82px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: 12px;
+
+            height: 9px;
+
+            background: #e9859d;
+
+            border-radius:
+                50% 50% 55% 55%;
+
+        }
+
+
+        .mouth {
+
+            position: absolute;
+
+            top: 91px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: 30px;
+
+            height: 15px;
+
+            border-bottom:
+                2px solid #713b4b;
+
+            border-radius: 0 0 50% 50%;
+
+        }
+
+
+        /* =========================================
+           WHISKERS
+        ========================================= */
+
+        .whiskers {
+
+            position: absolute;
+
+            top: 88px;
+
+            width: 55px;
+
+            height: 35px;
+
+        }
+
+
+        .whiskers.left {
+
+            left: -40px;
+
+        }
+
+
+        .whiskers.right {
+
+            right: -40px;
+
+        }
+
+
+        .whiskers::before,
+        .whiskers::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 50px;
+
+            height: 1px;
+
+            background: #c58b9b;
+
+        }
+
+
+        .whiskers::before {
+
+            top: 8px;
+
+            transform:
+                rotate(8deg);
+
+        }
+
+
+        .whiskers::after {
+
+            top: 20px;
+
+            transform:
+                rotate(-8deg);
+
+        }
+
+
+        /* =========================================
+           ARMS HOLDING HEART
+        ========================================= */
+
+        .arm {
+
+            position: absolute;
+
+            width: 85px;
+
+            height: 28px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            z-index: 8;
+
+            top: 170px;
+
+            box-shadow:
+                0 5px 10px
+                rgba(125,55,76,.08);
+
+        }
+
+
+        .arm.left {
+
+            left: 40px;
+
+            transform:
+                rotate(35deg);
+
+        }
+
+
+        .arm.right {
+
+            right: 40px;
+
+            transform:
+                rotate(-35deg);
+
+        }
+
+
+        /* =========================================
+           HEART
+        ========================================= */
+
+        .held-heart {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 160px;
+
+            transform:
+                translateX(-50%)
+                rotate(-45deg);
+
+            width: 65px;
+
+            height: 65px;
+
+            background: #d95372;
+
+            z-index: 10;
+
+            box-shadow:
+                0 10px 25px
+                rgba(198,83,115,.3);
+
+            animation:
+                heartBeat
+                1.5s
+                ease-in-out
+                infinite;
+
+        }
+
+
+        .held-heart::before,
+        .held-heart::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 65px;
+
+            height: 65px;
+
+            background: #d95372;
+
+            border-radius: 50%;
+
+        }
+
+
+        .held-heart::before {
+
+            top: -32px;
+
+            left: 0;
+
+        }
+
+
+        .held-heart::after {
+
+            left: 32px;
+
+            top: 0;
+
+        }
+
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateX(-50%)
+                    rotate(-45deg)
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    translateX(-50%)
+                    rotate(-45deg)
+                    scale(1.08);
+
+            }
+
+        }
+
+
+        /* =========================================
+           LETTER
+        ========================================= */
+
+        .letter {
+
+            width: min(
+                480px,
+                90vw
+            );
+
+            min-height: 330px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .92
+                );
+
+            border-radius: 8px;
+
+            padding: 42px;
+
+            box-shadow:
+                0 25px 60px
+                rgba(125,55,76,.15);
+
+            position: relative;
+
+            transform:
+                rotate(1.5deg);
+
+            border:
+                1px solid
+                rgba(198,83,115,.12);
+
+        }
+
+
+        .letter::before {
+
+            content: "♡";
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 20px;
+
+            color: #e99aad;
+
+            font-size: 20px;
+
+        }
+
+
+        .letter-title {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 30px;
+
+            color: #c65373;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .letter-text {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: #713b4b;
+
+        }
+
+
+        .signature {
+
+            margin-top: 25px;
+
+            font-family:
+                cursive;
+
+            font-size: 22px;
+
+            color: #c65373;
+
+        }
+
+
+        /* =========================================
+           FLOATING HEARTS
+        ========================================= */
+
+        .floating-heart {
+
+            position: fixed;
+
+            pointer-events: none;
+
+            color: #d95372;
+
+            font-size: 20px;
+
+            z-index: 20;
+
+            animation:
+                floatHeart
+                2.8s
+                ease-out
+                forwards;
+
+        }
+
+
+        @keyframes floatHeart {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(
+                        0,
+                        0
+                    )
+                    scale(.4);
+
+            }
+
+            15% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(
+                        var(--x),
+                        var(--y)
+                    )
+                    scale(1.3);
+
+            }
+
+        }
+
+
+        /* =========================================
+           NEXT BUTTON
+        ========================================= */
+
+        .next-button {
+
+            display: flex;
+
+            width: max-content;
+
+            margin:
+                45px auto 0;
+
+            padding:
+                14px 42px;
+
+            border: none;
+
+            border-radius: 999px;
+
+            background: #c65373;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 30px
+                rgba(198,83,115,.25);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+
+        }
+
+
+        .next-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 18px 35px
+                rgba(198,83,115,.32);
+
+        }
+
+
+        .next-button:active {
+
+            transform:
+                scale(.96);
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            body {
+
+                overflow-y: auto;
+
+                overflow-x: hidden;
+
+            }
+
+
+            .gift3-page {
+
+                padding:
+                    45px 20px 40px;
+
+            }
+
+
+            .page-subtitle {
+
+                margin-bottom: 25px;
+
+            }
+
+
+            .content {
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 10px;
+
+            }
+
+
+            .cat-area {
+
+                width: 100%;
+
+                min-width: 0;
+
+                height: 300px;
+
+                transform:
+                    scale(.85);
+
+                margin:
+                    -25px 0;
+
+            }
+
+
+            .letter {
+
+                padding: 30px 25px;
+
+                min-height: 280px;
+
+            }
+
+
+            .letter-title {
+
+                font-size: 26px;
+
+            }
+
+
+            .letter-text {
+
+                font-size: 16px;
+
+            }
+
+
+            .next-button {
+
+                margin-top: 30px;
+
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .page-title {
+
+                font-size: 30px;
+
+            }
+
+
+            .page-subtitle {
+
+                font-size: 14px;
+
+            }
+
+
+            .cat-area {
+
+                height: 260px;
+
+                transform:
+                    scale(.75);
+
+                margin:
+                    -35px 0;
+
+            }
+
+
+            .letter {
+
+                padding: 25px 20px;
+
+            }
+
+
+            .letter-text {
+
+                font-size: 15px;
+
+                line-height: 1.7;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="gift3-page">
+
+
+    <h1 class="page-title">
+        A Message From My Spider Senses ♡
+    </h1>
+
+
+    <p class="page-subtitle">
+        Because you deserve a few words from me.
+    </p>
+
+
+    <div class="content">
+
+
+        <!-- =====================================
+             CAT
+        ====================================== -->
+
+        <div class="cat-area">
+
+            <div class="cat-wrapper">
+
+
+                <div class="cat-body"></div>
+
+
+                <div class="cat-head">
+
+
+                    <div class="ear left"></div>
+
+                    <div class="ear right"></div>
+
+
+                    <div class="eye left"></div>
+
+                    <div class="eye right"></div>
+
+
+                    <div class="nose"></div>
+
+                    <div class="mouth"></div>
+
+
+                    <div class="whiskers left"></div>
+
+                    <div class="whiskers right"></div>
+
+                </div>
+
+
+                <div class="arm left"></div>
+
+                <div class="arm right"></div>
+
+
+                <div class="held-heart"></div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             LETTER
+        ====================================== -->
+
+        <div class="letter">
+
+
+            <h2 class="letter-title">
+                To you ♡
+            </h2>
+
+
+            <p class="letter-text">
+
+                I just wanted you to know
+                that you are someone very
+                special to me.
+
+                <br><br>
+
+                I hope this made you smile, even just
+                a little...
+
+                <br><br>
+
+                And no matter how many
+                gifts there are, you will
+                always be the best part
+                of the surprise.
+
+            </p>
+
+
+            <div class="signature">
+                With love ♡
+				-Spiderman🕸🕷️
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         NEXT
+    ====================================== -->
+
+    <a
+        href="final-gift.html"
+        class="next-button"
+    >
+        NEXT ♡
+    </a>
+
+
+</main>
+
+
+<script>
+
+
+/* =========================================
+   HEART GENERATOR
+========================================= */
+
+function createFloatingHeart() {
+
+
+    const heart =
+        document.createElement(
+            "span"
+        );
+
+
+    heart.className =
+        "floating-heart";
+
+
+    const symbols = [
+        "♡",
+        "♥",
+        "♡",
+        "✦"
+    ];
+
+
+    heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+
+    /*
+        Start around the cat.
+    */
+
+    const catArea =
+        document.querySelector(
+            ".cat-area"
+        );
+
+
+    const rect =
+        catArea.getBoundingClientRect();
+
+
+    const startX =
+        rect.left +
+        rect.width *
+        (.35 +
+        Math.random() *
+        .3);
+
+
+    const startY =
+        rect.top +
+        rect.height *
+        (.35 +
+        Math.random() *
+        .25);
+
+
+    heart.style.left =
+        `${startX}px`;
+
+
+    heart.style.top =
+        `${startY}px`;
+
+
+    /*
+        Random direction.
+    */
+
+    const x =
+        (Math.random() - .5) *
+        180;
+
+
+    const y =
+        -80 -
+        Math.random() *
+        180;
+
+
+    heart.style.setProperty(
+        "--x",
+        `${x}px`
+    );
+
+
+    heart.style.setProperty(
+        "--y",
+        `${y}px`
+    );
+
+
+    heart.style.fontSize =
+        `${14 + Math.random() * 16}px`;
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    heart.addEventListener(
+        "animationend",
+        () => {
+
+            heart.remove();
+
+        },
+        {
+            once: true
+        }
+    );
+
+}
+
+
+/* =========================================
+   CONTINUOUS HEARTS
+========================================= */
+
+setInterval(
+    createFloatingHeart,
+    650
+);
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>You Passed The Love Test</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #ffdfe7;
+            overflow: hidden;
+        }
+
+        /* =========================================
+           MAIN PAGE
+        ========================================= */
+
+        .surprise-page {
+            min-height: 100vh;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding-top: 90px;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.55), transparent 25%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,0.45), transparent 25%),
+                #ffdfe7;
+        }
+
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        .surprise-title {
+            color: #d94f78;
+
+            font-size: 42px;
+            font-weight: 800;
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+            letter-spacing: -1px;
+        }
+
+
+        .surprise-subtitle {
+            color: #a94d69;
+
+            font-size: 18px;
+            font-weight: 600;
+
+            text-align: center;
+
+            margin-bottom: 70px;
+        }
+
+
+        /* =========================================
+           GIFTS
+        ========================================= */
+
+        /* =========================================
+   PREMIUM GIFTS
+========================================= */
+
+.gifts-container {
+    width: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 85px;
+
+    perspective: 1000px;
+}
+
+
+/* =========================================
+   GIFT
+========================================= */
+
+.gift {
+    width: 190px;
+    height: 205px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    transition:
+        transform 160ms cubic-bezier(.2,.8,.2,1);
+
+    will-change: transform;
+}
+
+/* =========================================
+   GIFTS POP IN ONE AFTER ANOTHER
+========================================= */
+
+.gift {
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(.75);
+
+    animation:
+        giftPopIn
+        600ms
+        cubic-bezier(.16, 1, .3, 1)
+        forwards;
+}
+
+
+/* Gift 1 */
+
+.gift:nth-child(1) {
+    animation-delay: 250ms;
+}
+
+
+/* Gift 2 */
+
+.gift:nth-child(2) {
+    animation-delay: 500ms;
+}
+
+
+/* Gift 3 */
+
+.gift:nth-child(3) {
+    animation-delay: 750ms;
+}
+
+
+/* =========================================
+   POP IN ANIMATION
+========================================= */
+
+@keyframes giftPopIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.75);
+    }
+
+    60% {
+        opacity: 1;
+
+        transform:
+            translateY(-6px)
+            scale(1.06);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================================
+   PREMIUM HOVER
+========================================= */
+
+.gift:hover {
+    transform:
+        translateY(-12px)
+        scale(1.04);
+}
+
+
+.gift:active {
+    transform:
+        translateY(-3px)
+        scale(.98);
+}
+
+
+/* =========================================
+   GIFT BOX
+========================================= */
+
+.gift-box {
+
+    position: absolute;
+
+    left: 20px;
+    bottom: 5px;
+
+    width: 150px;
+    height: 125px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d86b82 0%,
+            #c95670 45%,
+            #b9425c 100%
+        );
+
+    border-radius: 5px;
+
+    border: none;
+
+    box-shadow:
+        0 14px 25px rgba(148, 54, 78, .20),
+        inset 8px 0 15px rgba(255,255,255,.10),
+        inset -8px 0 15px rgba(0,0,0,.08);
+}
+
+
+/* =========================================
+   BOX FRONT HIGHLIGHT
+========================================= */
+
+.gift-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 45%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,.12),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   GIFT LID
+========================================= */
+
+.gift-lid {
+
+    position: absolute;
+
+    left: 8px;
+    top: 58px;
+
+    width: 174px;
+    height: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e77c92,
+            #c95670
+        );
+
+    border: none;
+
+    border-radius: 5px;
+
+    z-index: 3;
+
+    box-shadow:
+        0 7px 12px rgba(148, 54, 78, .18);
+}
+
+
+/* =========================================
+   LID HIGHLIGHT
+========================================= */
+
+.gift-lid::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    right: 8px;
+    top: 5px;
+
+    height: 5px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.18);
+}
+
+
+/* =========================================
+   VERTICAL RIBBON
+========================================= */
+
+.gift-ribbon-vertical {
+
+    position: absolute;
+
+    left: 82px;
+    bottom: 5px;
+
+    width: 26px;
+    height: 125px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f8d7dc,
+            #ffffff,
+            #f1c4cc
+        );
+
+    z-index: 4;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.25);
+}
+
+
+/* =========================================
+   HORIZONTAL RIBBON
+========================================= */
+
+.gift-ribbon-horizontal {
+
+    position: absolute;
+
+    left: 8px;
+    top: 66px;
+
+    width: 174px;
+    height: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f8d7dc,
+            #ffffff,
+            #f1c4cc
+        );
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   BOW
+========================================= */
+
+.bow {
+
+    position: absolute;
+
+    left: 50%;
+    top: 5px;
+
+    width: 95px;
+    height: 62px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   BOW LOOPS
+========================================= */
+
+.bow-left,
+.bow-right {
+
+    position: absolute;
+
+    top: 13px;
+
+    width: 52px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f9dce1,
+            #e9aab6
+        );
+
+    border: none;
+
+    box-shadow:
+        0 5px 10px rgba(148, 54, 78, .15);
+}
+
+
+/* LEFT */
+
+.bow-left {
+
+    left: 0;
+
+    border-radius:
+        70% 30% 60% 40%;
+
+    transform:
+        rotate(-18deg);
+}
+
+
+/* RIGHT */
+
+.bow-right {
+
+    right: 0;
+
+    border-radius:
+        30% 70% 40% 60%;
+
+    transform:
+        rotate(18deg);
+}
+
+
+/* =========================================
+   BOW INNER HIGHLIGHTS
+========================================= */
+
+.bow-left::after,
+.bow-right::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 8px;
+
+    top: 9px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.45);
+}
+
+
+.bow-left::after {
+    left: 10px;
+}
+
+
+.bow-right::after {
+    right: 10px;
+}
+
+
+/* =========================================
+   BOW CENTER
+========================================= */
+
+.bow-center {
+
+    position: absolute;
+
+    left: 50%;
+    top: 18px;
+
+    transform:
+        translateX(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff,
+            #edb5c0 45%,
+            #d86b82 100%
+        );
+
+    border: none;
+
+    border-radius: 50%;
+
+    z-index: 20;
+
+    box-shadow:
+        0 4px 10px rgba(148,54,78,.20);
+}
+
+
+/* =========================================
+   SMALL GLOW
+========================================= */
+
+.gift::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 145px;
+    height: 25px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(190, 70, 100, .16);
+
+    filter: blur(12px);
+
+    z-index: -1;
+}
+
+
+        /* =========================================
+           BOW
+        ========================================= */
+
+        .bow {
+            position: absolute;
+
+            left: 50%;
+            top: 5px;
+
+            transform: translateX(-50%);
+
+            width: 70px;
+            height: 55px;
+
+            z-index: 10;
+        }
+
+
+        .bow-left,
+        .bow-right {
+            position: absolute;
+
+            width: 45px;
+            height: 35px;
+
+            background: #f58f9d;
+
+            border: 3px solid #dc7283;
+
+            top: 8px;
+
+            border-radius: 50% 50% 45% 45%;
+        }
+
+
+        .bow-left {
+            left: 0;
+
+            transform: rotate(-25deg);
+        }
+
+
+        .bow-right {
+            right: 0;
+
+            transform: rotate(25deg);
+        }
+
+
+        .bow-center {
+            position: absolute;
+
+            left: 50%;
+            top: 15px;
+
+            transform: translateX(-50%);
+
+            width: 25px;
+            height: 25px;
+
+            background: #f27f91;
+
+            border: 3px solid #d86b7c;
+
+            border-radius: 50%;
+
+            z-index: 5;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .surprise-page {
+                padding-top: 60px;
+            }
+
+            .surprise-title {
+                font-size: 30px;
+                padding: 0 20px;
+            }
+
+            .surprise-subtitle {
+                font-size: 15px;
+                margin-bottom: 40px;
+            }
+
+            .gifts-container {
+                gap: 15px;
+                width: 100%;
+            }
+
+            .gift {
+                transform: scale(0.7);
+                margin: -20px;
+            }
+
+            .gift:hover {
+                transform: scale(0.75) translateY(-10px);
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .gifts-container {
+                gap: 0;
+            }
+
+            .gift {
+                transform: scale(0.55);
+                margin: -35px;
+            }
+
+            .gift:hover {
+                transform: scale(0.6) translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="surprise-page">
+
+        <h1 class="surprise-title">
+            You passed the love test
+        </h1>
+
+        <p class="surprise-subtitle">
+            Your surprises are waiting for you
+        </p>
+
+
+        <div class="gifts-container">
+
+            <!-- GIFT 1 -->
+            <div class="gift" onclick="openGift(1)">
+
+                <div class="bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-box"></div>
+
+                <div class="gift-ribbon-horizontal"></div>
+
+                <div class="gift-ribbon-vertical"></div>
+
+            </div>
+
+
+            <!-- GIFT 2 -->
+            <div class="gift" onclick="openGift(2)">
+
+                <div class="bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-box"></div>
+
+                <div class="gift-ribbon-horizontal"></div>
+
+                <div class="gift-ribbon-vertical"></div>
+
+            </div>
+
+
+            <!-- GIFT 3 -->
+            <div class="gift" onclick="openGift(3)">
+
+                <div class="bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-box"></div>
+
+                <div class="gift-ribbon-horizontal"></div>
+
+                <div class="gift-ribbon-vertical"></div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function openGift(giftNumber) {
+
+    if (giftNumber === 1) {
+        window.location.href = "gift1.html";
+    }
+
+    else if (giftNumber === 2) {
+        window.location.href = "gift2.html";
+    }
+
+    else if (giftNumber === 3) {
+        window.location.href = "gift3.html";
+    }
+
+}
+
+    </script>
+
+</body>
+</html>
